@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+}
+#encabezado {
+    font-size: xx-large;
+    background-color: black;
+    color:white;
+    display: flex;
+    justify-content: center;
+}
