@@ -69,6 +69,7 @@ footer{
     grid-template-columns: repeat(3, auto);
     grid-gap: 3em;
     background-color: black;
+    padding: 1em;
 }
 .tarjeta{
     font-family: "Bebas Neue", sans-serif;
