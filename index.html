@@ -5,10 +5,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+
         <!--Fuentes-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -33,17 +38,23 @@
         <main>
             <section id="destacados">
                 <h3>DESTACADOS</h3>
-                <div class="contenedor-tarjetas"></div>
+                <h4>OFERTAS DE LA SEMANA!!</h4>
+                <div class="contenedor-tarjetas">
+                    <div class="tarjeta">NOMBRE DE PRODUCTO<img src="recursos/productos/ofertas/apex4.webp" alt=""></div>
+                    <div class="tarjeta">NOMBRE DE PRODUCTO<img src="recursos/productos/ofertas/apex4.webp" alt=""></div>
+                    <div class="tarjeta">NOMBRE DE PRODUCTO<img src="recursos/productos/ofertas/apex4.webp" alt=""></div>
+                    <div class="tarjeta">NOMBRE DE PRODUCTO<img src="recursos/productos/ofertas/apex4.webp" alt=""></div>
+                </div>
 
             </section>
 
             <section id="notebooks">
                 <h3>NOTEBOOKS</h3>
                 <div class="contenedor-tarjetas">
-                    <div class="tarjeta"></div>
-                    <div class="tarjeta"></div>
-                    <div class="tarjeta"></div>
-                    <div class="tarjeta"></div>
+                    <div class="tarjeta"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe beatae nesciunt, commodi id quod eligendi nostrum ipsum impedit. Illum odit minima sint laudantium repellat id dolorum, unde itaque laborum error?</p></div>
+                    <div class="tarjeta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, beatae delectus nobis voluptatum impedit commodi laboriosam dolore ut quam officiis adipisci quod pariatur neque aperiam similique? Corrupti dolor nam iste?</div>
+                    <div class="tarjeta">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos labore saepe quasi incidunt earum quidem quis et nostrum sint doloribus repellendus, similique minus minima aliquam voluptates, enim facere atque voluptatibus.</div>
+                    <div class="tarjeta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non repellat animi excepturi beatae blanditiis ratione unde, dolore voluptatum omnis neque obcaecati deleniti inventore temporibus iusto ducimus iste perspiciatis repellendus vitae.</div>
                 </div>
 
             </section>
@@ -51,10 +62,10 @@
             <section id="perifericos">
                 <h3>PERIFERICOS Y ACCESORIOS</h3>
                 <div class="contenedor-tarjetas">
-                    <div class="tarjeta"></div>
-                    <div class="tarjeta"></div>
-                    <div class="tarjeta"></div>
-                    <div class="tarjeta"></div>
+                    <div class="tarjeta">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut eligendi nostrum minus soluta optio officiis provident quia laborum beatae repellat sint mollitia dolorum, asperiores repudiandae ipsa ratione amet magnam. Totam.</div>
+                    <div class="tarjeta">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio velit reiciendis hic vero architecto, consequuntur ab, odio voluptas quis quisquam laudantium dolores, rem laborum mollitia quasi doloremque a. Natus, veritatis.</div>
+                    <div class="tarjeta">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore impedit fugit voluptas accusamus deleniti non eius exercitationem. Vitae, magnam nemo, harum eos earum culpa cumque modi veritatis explicabo mollitia quo!</div>
+                    <div class="tarjeta">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae eligendi odio quidem modi officiis, error laboriosam nihil debitis ad tenetur facilis dicta cumque ratione reprehenderit dignissimos voluptas ipsa ut suscipit.</div>
 
                 </div>
             </section>
@@ -62,20 +73,29 @@
             <section id="pcs-armadas">
                 <h3>ARMADAS</h3>
                 <div class="contenedor-tarjetas">
-                    <div class="tarjeta"></div>
-                    <div class="tarjeta"></div>
-                    <div class="tarjeta"></div>
-                    <div class="tarjeta"></div>
+                    <div class="tarjeta">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut eligendi nostrum minus soluta optio officiis provident quia laborum beatae repellat sint mollitia dolorum, asperiores repudiandae ipsa ratione amet magnam. Totam.</div>
+                    <div class="tarjeta">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio velit reiciendis hic vero architecto, consequuntur ab, odio voluptas quis quisquam laudantium dolores, rem laborum mollitia quasi doloremque a. Natus, veritatis.</div>
+                    <div class="tarjeta">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore impedit fugit voluptas accusamus deleniti non eius exercitationem. Vitae, magnam nemo, harum eos earum culpa cumque modi veritatis explicabo mollitia quo!</div>
+                    <div class="tarjeta">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae eligendi odio quidem modi officiis, error laboriosam nihil debitis ad tenetur facilis dicta cumque ratione reprehenderit dignissimos voluptas ipsa ut suscipit.</div>
+
                 </div>
             </section>
 
             <section id="contacto">
                 <h3>Contacto</h3>
-                <form action=""></form>
+                <h4>Envianos tu consulta!</h4>
+                <p>Podes consultarnos por componentes en particular y te enviamos la cotización!</p>
+                <form action="https://formspree.io/f/meoqaled" method="POST">
+                    <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre">
+                    <input type="email" name="email" id="email" placeholder="Escribe tu email">
+                    <textarea name="mensaje" id="mensaje" rows="1" cols="50" placeholder="Escribe tu mensaje"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
             </section>
         </main>
         <footer>
             <h3>Seguinos en nuestras redes!</h3>
+            
             <div class="contenedor-redes">
                 <a href=""><img src="recursos/iconos/facebook-svgrepo-com.svg" alt=""></a>
                 <a href=""><img src="recursos/iconos/instagram-svgrepo-com.svg" alt=""></a>
