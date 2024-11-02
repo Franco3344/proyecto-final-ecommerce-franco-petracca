@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: grey;
+    overflow: scroll;
     
 }
 #encabezado {
@@ -18,13 +19,16 @@ body {
 #icono-encabezado {
     padding-top: 5px;
 }
-#nav-bar>div{
+#nav-bar{
+    display: flex;
     justify-content: center;
+    overflow: auto;
 }
 h2{
     text-align: center;
 }
-#nav-bar>div>ul{
+#nav-bar>ul{
+    width: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -65,8 +69,7 @@ footer{
 }
 .contenedor-tarjetas{
     display: grid;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
     grid-gap: 3em;
     background-color: black;
     padding: 1em;
@@ -89,6 +92,8 @@ footer{
 .tarjeta>img{
     width: 70%;
     height: 70%;
+    max-width: 70%;
+    max-height: 70%;
 }
 #contacto{
     align-items: center;
@@ -127,4 +132,16 @@ form>*{
 ::placeholder{
     text-align: center;
 
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .contenedor-tarjetas{
+        grid-template-columns: repeat(1, auto);
+    }
+    #nav-bar>ul{
+        width: auto;
+        display: grid;
+       grid-template-columns: repeat(2,auto); 
+    }
 }
