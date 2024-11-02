@@ -36,7 +36,7 @@ h2{
 li>a{
     font-family: "Silkscreen", sans-serif;
     font-weight: 400;
-    font-style: normal;
+    font-style: normal;font-size: xx-large;
     color: white;
     text-decoration: none;
 
@@ -75,26 +75,62 @@ footer{
     background-color: black;
     padding: 1em;
 }
+.contenedor-tarjeta-reseña{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: black;
+    padding: 1em;
+}
 .tarjeta{
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: larger;
+    font-size: 2em;
     background-color: white;
     color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 0.5em;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
     text-align: center;
 }
-.tarjeta>img{
+.tarjeta-reseña{
+    font-family: "Biryani", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.7em;
+    margin: 0.4em;
+    border-radius: 0.5em;
     width: 70%;
-    height: 70%;
-    max-width: 70%;
-    max-height: 70%;
+    height: 80%;
+    color: black;
+    background-color: white;
+}
+.tarjeta-reseña>div{
+    display: flex;
+    justify-content: space;
+}
+.estrellas{
+    padding-right: 1em;
+    padding-top: 0.5em;
+}
+.tarjeta>img{
+    width: auto;
+    height: auto;
+    max-width: 40%;
+    max-height: 40%;
+    
+}
+.tarjeta>span{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
 }
 #contacto{
     align-items: center;
@@ -102,12 +138,16 @@ footer{
 }
 h3{
     background-color: grey;
+    font-size: 2em;
+}
+h4{
+    font-size: 1.5em;
 }
 #contacto>p{
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: large;
+    font-size: x-large;
 }
 form{
     margin: 0 auto;
@@ -132,7 +172,10 @@ form>*{
 }
 ::placeholder{
     text-align: center;
-
+}
+span{
+    text-align: center;
+    position: bottom;
 }
 
 /* Media Queries */
@@ -157,5 +200,7 @@ form>*{
         text-align: center;
         padding-bottom: 2%;
     }
-    
+    .tarjeta-reseña{
+        font-size: x-large;
+    }
 }
