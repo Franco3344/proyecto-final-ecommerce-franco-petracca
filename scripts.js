@@ -28,32 +28,28 @@ const productos = [
         ]
     },
     {
-        seccion:"ofertas",
+        seccion:"destacados",
         productos:
         [
             {
                 nombre:"Procesador AMD Ryzen 7 5700G 100-100000263BOX de 8 núcleos y 4.6GHz de frecuencia con gráfica integrada",
                 imagen:"recursos/productos/ofertas/ryzen7.webp",
-                precio_original:233000,
-                precio_oferta:150000
+                precio:150000
             },
             {
                 nombre:"Flydigi-controlador de juego APEX 4 Black Myth Wukong",
                 imagen:"recursos/productos/ofertas/apex4wukong.webp",
-                precio_original:274000,
-                precio_oferta:192000
+                precio:192000
             },
             {
                 nombre:"Placa De Video Nvidia Zotac Gaming Geforce Rtx 4090 24 Gb",
                 imagen:"recursos/productos/ofertas/placa4090.webp",
-                precio_original:1660000,
-                precio_oferta:963000
+                precio:963000
             },
             {
                 nombre:"Repetidor de señal inalámbrico TP-Link Ti-WA850re, 300 Mbps, Wi-Fi, color blanco, 110 V/220 V",
                 imagen:"recursos/productos/ofertas/tplinkextender.webp",
-                precio_original:38000,
-                precio_oferta:29000
+                precio:29000
             }
         ]
     },
@@ -85,12 +81,37 @@ const productos = [
     }
 ];
 
-let contenedorTarjeta = `
-                <div class="contenedor-tarjetas">
-                    <div class="tarjeta"><span>Procesador AMD Ryzen 7 5700G 100-100000263BOX de 8 núcleos y 4.6GHz de frecuencia con gráfica integrada</span><img src="recursos/productos/ofertas/ryzen7.webp" alt=""><s>$233.000</s><span>$150.000</span></div>
-                    <div class="tarjeta"><span>Flydigi-controlador de juego APEX 4 Black Myth Wukong</span><img src="recursos/productos/ofertas/apex4wukong.webp" alt=""><s>$274.000</s><span>$192.000</span></div>
-                    <div class="tarjeta"><span>Placa De Video Nvidia Zotac Gaming Geforce Rtx 4090 24 Gb</span><img src="recursos/productos/ofertas/placa4090.webp" alt=""><s>$1.660.000</s><span>$963.000</span></div>
-                    <div class="tarjeta"><span>Repetidor de señal inalámbrico TP-Link Ti-WA850re, 300 Mbps, Wi-Fi, color blanco, 110 V/220 V</span><img src="recursos/productos/ofertas/tplinkextender.webp" alt=""><s>$38.000</s><span>$29.000</span></div>
-                </div>
-`
+let contenedorTarjeta = "";
+let nombreSeccion = "";
+let contenedorSeccionHTML;
+let tarjeta = "";
 
+
+//Se agregan los productos por seccion
+for (let indiceSeccion = 0; indiceSeccion < productos.length;indiceSeccion++){
+    
+    //Se obtiene el nombre de la seccion
+    nombreSeccion = productos[indiceSeccion].seccion;
+    
+    //Instanciamos la seccion
+    contenedorSeccionHTML = document.getElementById(nombreSeccion);
+
+    //Se crea el inicio del contenedor de tarjeta
+    contenedorTarjeta = `<div class="contenedor-tarjetas">`;
+
+    //Agregamos todos los productos de la seccion
+    for (let indiceProductos = 0; indiceProductos<productos[indiceSeccion].productos.length;indiceProductos++){
+        //instanciamos el producto actual
+        let producto = productos[indiceSeccion].productos[indiceProductos];
+        contenedorTarjeta+=`<div class="tarjeta">
+                                <span>${producto.nombre}</span>
+                                <img src=${producto.imagen} alt="">
+                                <span>$${producto.precio}</span>
+                                <button>Agregar Al Carrito</button>
+                            </div>`;
+    }
+
+    //Se cierra el tag y se agrega el elemento al contenedor de seccion
+    contenedorTarjeta+="</div>";
+    contenedorSeccionHTML.innerHTML += contenedorTarjeta;
+}
