@@ -1,5 +1,3 @@
-console.log("ok");
-
 const productos = [
     {
         seccion:"notebooks",
@@ -88,30 +86,45 @@ let tarjeta = "";
 
 
 //Se agregan los productos por seccion
-for (let indiceSeccion = 0; indiceSeccion < productos.length;indiceSeccion++){
-    
-    //Se obtiene el nombre de la seccion
-    nombreSeccion = productos[indiceSeccion].seccion;
-    
-    //Instanciamos la seccion
-    contenedorSeccionHTML = document.getElementById(nombreSeccion);
+function inicializarProductos(){
 
-    //Se crea el inicio del contenedor de tarjeta
-    contenedorTarjeta = `<div class="contenedor-tarjetas">`;
 
-    //Agregamos todos los productos de la seccion
-    for (let indiceProductos = 0; indiceProductos<productos[indiceSeccion].productos.length;indiceProductos++){
-        //instanciamos el producto actual
-        let producto = productos[indiceSeccion].productos[indiceProductos];
-        contenedorTarjeta+=`<div class="tarjeta">
-                                <span>${producto.nombre}</span>
-                                <img src=${producto.imagen} alt="">
-                                <span>$${producto.precio}</span>
-                                <button>Agregar Al Carrito</button>
-                            </div>`;
+    for (var indiceSeccion = 0; indiceSeccion < productos.length;indiceSeccion++){
+        
+        //Se obtiene el nombre de la seccion
+        nombreSeccion = productos[indiceSeccion].seccion;
+        
+        //Instanciamos la seccion
+        contenedorSeccionHTML = document.getElementById(nombreSeccion);
+
+        //Se crea el inicio del contenedor de tarjetas
+        contenedorTarjeta = `<div class="contenedor-tarjetas">`;
+
+        //Agregamos todos los productos de la seccion
+        for (var indiceProductos = 0; indiceProductos<productos[indiceSeccion].productos.length;indiceProductos++){
+            //instanciamos el producto actual
+            var producto = productos[indiceSeccion].productos[indiceProductos];
+            contenedorTarjeta+=`<div class="tarjeta">
+                                    <span>${producto.nombre}</span>
+                                    <img src=${producto.imagen} alt="">
+                                    <span>$${producto.precio}</span>
+                                    <button class="boton-agregar">Agregar Al Carrito</button>
+                                </div>`;
+        }
+
+        //Se cierra el tag y se agrega el elemento al contenedor de seccion
+        contenedorTarjeta+="</div>";
+        contenedorSeccionHTML.innerHTML += contenedorTarjeta;
     }
-
-    //Se cierra el tag y se agrega el elemento al contenedor de seccion
-    contenedorTarjeta+="</div>";
-    contenedorSeccionHTML.innerHTML += contenedorTarjeta;
 }
+
+//Carrito
+
+function inicializarBotonesCompra(){
+    var botonesAgregar = document.querySelectorAll(".boton-agregar");
+    console.log(botonesAgregar);
+}
+
+inicializarProductos();
+
+inicializarBotonesCompra();

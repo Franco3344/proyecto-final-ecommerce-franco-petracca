@@ -92,6 +92,7 @@ footer{
     color: black;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     border-radius: 0.5em;
     width: auto;
@@ -100,6 +101,7 @@ footer{
     max-height: 100%;
     text-align: center;
     flex-wrap: wrap;
+    padding-bottom: 1em;
 }
 .tarjeta-reseña{
     font-family: "Biryani", sans-serif;
@@ -188,6 +190,10 @@ form>*{
 span{
     text-align: center;
     position: bottom;
+}
+
+#carrito div{
+    background-color: black;
 }
 
 /* Media Queries */
