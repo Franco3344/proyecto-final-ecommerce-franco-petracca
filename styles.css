@@ -192,8 +192,21 @@ span{
     position: bottom;
 }
 
+
 #carrito div{
+    display: flex;
+    flex-direction: row;
     background-color: black;
+    text-align: center;
+    align-items: center;
+}
+
+#carrito button{
+    background-color: black;
+    border: 0;
+    cursor: pointer;
+   
+    
 }
 
 /* Media Queries */
