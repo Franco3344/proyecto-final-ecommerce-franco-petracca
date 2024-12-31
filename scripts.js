@@ -149,36 +149,80 @@ function buscarProducto(indice){
     }
 }
 
+// function inicializarBotonBorrar(botonBorrar){
+//     var botonesBorrar = document.querySelectorAll(".boton-borrar");
+//     var botonBorrar;
+//     for (let indice = 0; indice < botonesBorrar.length; indice++){
+//         botonBorrar = botonesBorrar[indice];
+//         function borrarDeCarrito(){
+//             console.log(botonBorrar);
+//             var itemABorrar = botonBorrar.parentElement;
+//             itemABorrar.remove();
+//         }
+//         botonBorrar.addEventListener("click",borrarDeCarrito);
+//     }
+// }
+
 function inicializarBotonesCompra(){
     var botonesAgregar = document.querySelectorAll(".boton-agregar");
 
     for(let indice=0;indice<botonesAgregar.length;indice++){
         
-        
-
         function agregarACarrito(){
-            //instanciar label total a pagar y obtener su valor
+            //Instanciar label total a pagar y obtener su valor
             var ulProductos = document.querySelector("#carrito ul");
             var labelTotalAPagar = document.querySelector(".total-a-pagar");
             var totalAPagar = parseInt(labelTotalAPagar.innerHTML.split(":")[1].replace("$",""));
             var producto = buscarProducto(indice);
             
-            ulProductos.innerHTML += `<div>
-                                        <p>${producto.nombre} $${producto.precio}</p>
-                                        <button class="boton-borrar" ><img src="recursos/iconos/trash-can-svgrepo-com.svg"></button>
-                                     </div>`
+
+             // Crear el div del producto dentro del carrito
+            var nuevoProducto = document.createElement('div');
+            nuevoProducto.innerHTML = `
+                <p>${producto.nombre} $${producto.precio}</p>
+                <button class="boton-borrar">
+                    <img src="recursos/iconos/trash-can-svgrepo-com.svg">
+                </button>
+            `;
+
+            // Agregar el nuevo producto al carrito
+            ulProductos.appendChild(nuevoProducto);
             
 
             totalAPagar += producto.precio;
             labelTotalAPagar.innerHTML = "Total a pagar: $ " + totalAPagar;
             
-            
+
+            //funcionalidad del boton borrar
+            var botonBorrar = ulProductos.querySelectorAll(".boton-borrar")[ulProductos.querySelectorAll(".boton-borrar").length - 1];
+            botonBorrar.addEventListener("click", function() {
+
+    
+                var labelTotalAPagar = document.querySelector(".total-a-pagar");
+                var totalAPagar = parseInt(labelTotalAPagar.innerHTML.split(":")[1].replace("$",""));
+                
+                totalAPagar-=producto.precio;
+
+                labelTotalAPagar.innerHTML = "Total a pagar: $ " + totalAPagar;
+                var itemABorrar = botonBorrar.parentElement;
+                itemABorrar.remove();
+                
+            });
         }
         botonesAgregar[indice].addEventListener("click",agregarACarrito);
     }
+
     
 }
 
+function inicializarBotonPagar(){
+    var botonPagar = document.querySelector(".boton-pagar");
+    botonPagar.addEventListener("click",function (){
+        alert("FEATURE EN PROGRESO");
+    });
+}
 inicializarProductos();
 
 inicializarBotonesCompra();
+
+inicializarBotonPagar()
