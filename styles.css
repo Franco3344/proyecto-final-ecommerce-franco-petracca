@@ -194,8 +194,7 @@ span{
 
 
 #carrito div{
-    display: flex;
-    flex-direction: row;
+    
     background-color: black;
     text-align: center;
     align-items: center;
@@ -207,6 +206,12 @@ span{
     cursor: pointer;
    
     
+}
+#carrito ul div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Media Queries */
